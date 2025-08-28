@@ -3,7 +3,7 @@ import Client from './api'
 // Register student
 export const RegisterStudent = async (data) => {
   try {
-    const res = await Client.post('/auth/student/register', data)
+    const res = await Client.post('/auth/register/student', data) 
     return res.data
   } catch (error) {
     throw error
@@ -13,7 +13,7 @@ export const RegisterStudent = async (data) => {
 // Register teacher
 export const RegisterTeacher = async (data) => {
   try {
-    const res = await Client.post('/auth/teacher/register', data)
+    const res = await Client.post('/auth/register/teacher', data) 
     return res.data
   } catch (error) {
     throw error
@@ -24,7 +24,7 @@ export const RegisterTeacher = async (data) => {
 export const Login = async (data) => {
   try {
     const res = await Client.post('/auth/login', data)
-    // Set the current signed in users token to localStorage
+    // Save token to localStorage
     localStorage.setItem('token', res.data.token)
     return res.data.user
   } catch (error) {
@@ -40,9 +40,4 @@ export const CheckSession = async () => {
   } catch (error) {
     throw error
   }
-}
-
-// Sign out (frontend-only, no backend call)
-export const SignOut = () => {
-  localStorage.removeItem('token')
 }
