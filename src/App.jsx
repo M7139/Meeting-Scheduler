@@ -44,59 +44,26 @@ const App = () => {
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/register/student" element={<StudentRegister />} />
         <Route path="/register/teacher" element={<TeacherRegister />} />
-
         {user && <Route path="/profile" element={<Profile user={user} />} />}
-
         <Route
           path="/availability"
-          element={
-            user && user.userType === 'teacher' ? (
-              <AvailabilityPage />
-            ) : (
-              <Navigate to="/" />
-            )
-          }
+          element={user && user.userType === 'teacher' ? <AvailabilityPage /> : <Navigate to="/" />}
         />
         <Route
           path="/teacher-bookings"
-          element={
-            user && user.userType === 'teacher' ? (
-              <TeacherBooking />
-            ) : (
-              <Navigate to="/" />
-            )
-          }
+          element={user && user.userType === 'teacher' ? <TeacherBooking /> : <Navigate to="/" />}
         />
-
         <Route
           path="/teachers"
-          element={
-            user && user.userType === 'student' ? (
-              <TeachersListPage />
-            ) : (
-              <Navigate to="/" />
-            )
-          }
+          element={user && user.userType === 'student' ? <TeachersListPage /> : <Navigate to="/" />}
         />
         <Route
           path="/teachers/:id"
-          element={
-            user && user.userType === 'student' ? (
-              <TeacherDetailsPage />
-            ) : (
-              <Navigate to="/" />
-            )
-          }
+          element={user && user.userType === 'student' ? <TeacherDetailsPage /> : <Navigate to="/" />}
         />
         <Route
           path="/student-bookings"
-          element={
-            user && user.userType === 'student' ? (
-              <StudentBooking />
-            ) : (
-              <Navigate to="/" />
-            )
-          }
+          element={user && user.userType === 'student' ? <StudentBooking /> : <Navigate to="/" />}
         />
       </Routes>
     </>

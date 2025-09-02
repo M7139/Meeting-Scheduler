@@ -1,100 +1,86 @@
 nav {
   background-color: #0f2b59;
   border-bottom: 1px solid #1a3a6b;
-  padding: 0 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-nav {
+.nav-container {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  min-height: 60px;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+.nav-brand {
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease;
+  letter-spacing: -0.025em;
+}
+
+.nav-brand:hover {
+  color: #f69240 !important;
+  transform: translateY(-1px);
 }
 
 .user-nav {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  margin-left: auto;
+  gap: 0.5rem;
 }
 
-nav a {
+.user-nav a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
+  padding: 0.625rem 1rem;
+  border-radius: 6px;
   transition: all 0.2s ease;
   white-space: nowrap;
+  position: relative;
 }
 
-nav a[href="/"] {
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 0.5rem 0;
-  margin-right: 2rem;
-}
-
-nav a:hover {
+.user-nav a:hover {
   color: #f69240;
   background-color: rgba(255, 255, 255, 0.1);
-}
-
-nav a.active {
-  color: #f69240;
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-nav button {
-  background-color: #dc3545;
-  color: #ffffff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-nav button:hover {
-  background-color: #c82333;
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.15);
 }
 
-nav button:active {
+.user-nav a:active {
   transform: translateY(0);
 }
 
-nav button:focus {
-  outline: 2px solid #dc3545;
+.logout-link {
+  background-color: #dc3545 !important;
+  color: #ffffff !important;
+  margin-left: 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.logout-link:hover {
+  background-color: #c82333 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.25);
+}
+
+.logout-link:active {
+  transform: translateY(0);
+}
+
+.nav-brand:focus,
+.user-nav a:focus {
+  outline: 2px solid #f69240;
   outline-offset: 2px;
-}
-
-nav a[href*="teacher"] {
-  color: #ffffff;
-}
-
-nav a[href*="student"] {
-  color: #ffffff;
-}
-
-nav a[href*="teacher"]:hover,
-nav a[href*="student"]:hover {
-  color: #f69240;
 }

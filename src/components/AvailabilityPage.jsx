@@ -10,6 +10,7 @@ import '../styles/Availability.css'
 const AvailabilityPage = () => {
   const [availability, setAvailability] = useState([])
   const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState('')
 
   useEffect(() => {
     getAvailability()
@@ -22,6 +23,7 @@ const AvailabilityPage = () => {
       setAvailability(profile.availability || [])
     } catch (err) {
       console.error('Failed to get availability', err)
+      setMessage('Failed to load availability')
     } finally {
       setLoading(false)
     }
@@ -42,28 +44,27 @@ const AvailabilityPage = () => {
       const slot = availability[index]
 
       if (slot._id) {
-        // Update existing slot
+        // Update existing slot using _id
         await UpdateAvailability({
           slotId: slot._id,
           day: slot.day,
           startTime: slot.startTime,
           endTime: slot.endTime
         })
+        setMessage('Slot updated successfully')
       } else {
         // Add new slot
-        await AddAvailability([
-          {
-            day: slot.day,
-            startTime: slot.startTime,
-            endTime: slot.endTime
-          }
+        const updatedTeacher = await AddAvailability([
+          { day: slot.day, startTime: slot.startTime, endTime: slot.endTime }
         ])
+        setAvailability(updatedTeacher.availability)
+        setMessage('Slot added successfully')
       }
 
-      // Refresh the data after saving
-      getAvailability()
+      await getAvailability()
     } catch (err) {
       console.error('Failed to save slot', err)
+      setMessage('Failed to save slot')
     }
   }
 
@@ -71,11 +72,14 @@ const AvailabilityPage = () => {
     try {
       if (slotId) {
         await DeleteAvailability(slotId)
+        setMessage('Slot deleted successfully')
       }
-      // Remove from local state 
+
+      // Remove from local state immediately
       setAvailability((prev) => prev.filter((_, i) => i !== index))
     } catch (err) {
       console.error('Failed to delete slot', err)
+      setMessage('Failed to delete slot')
     }
   }
 
@@ -86,6 +90,8 @@ const AvailabilityPage = () => {
   return (
     <div className="availability-container">
       <h2>Manage Availability</h2>
+
+      {message && <div className="message">{message}</div>}
 
       {availability.map((slot, index) => (
         <div key={slot._id || index} className="availability-slot">

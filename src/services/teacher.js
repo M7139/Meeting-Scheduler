@@ -70,7 +70,7 @@ export const AddAvailability = async (availability) => {
   }
 }
 
-// Update an availability slot by slotId
+// Update an availability
 export const UpdateAvailability = async (data) => {
   try {
     const res = await Client.put('/teachers/availability', data)
@@ -80,7 +80,8 @@ export const UpdateAvailability = async (data) => {
   }
 }
 
-// Delete an availability slot by slotId
+
+// Delete an availability slot by index
 export const DeleteAvailability = async (slotId) => {
   try {
     const res = await Client.delete(`/teachers/availability/${slotId}`)
@@ -89,3 +90,4 @@ export const DeleteAvailability = async (slotId) => {
     throw error
   }
 }
+

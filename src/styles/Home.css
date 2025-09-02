@@ -1,7 +1,5 @@
-/* Import Inter font for modern typography */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
-/* Base styles inspired by the Moodle design */
 body {
   margin: 0;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
@@ -14,7 +12,6 @@ body {
   min-height: 100vh;
 }
 
-/* Home page container */
 .home-container {
   max-width: 600px;
   margin: 0 auto;
@@ -22,7 +19,6 @@ body {
   text-align: center;
 }
 
-/* Main heading */
 h1 {
   color: #0f2b59;
   font-size: 2rem;
@@ -31,7 +27,6 @@ h1 {
   letter-spacing: -0.025em;
 }
 
-/* Description text */
 p {
   font-size: 1rem;
   color: #4c5a73;
@@ -39,7 +34,6 @@ p {
   line-height: 1.6;
 }
 
-/* Button container */
 .button-container {
   display: flex;
   flex-direction: column;
@@ -47,7 +41,6 @@ p {
   align-items: center;
 }
 
-/* Button styles */
 button {
   width: 100%;
   max-width: 280px;
@@ -64,7 +57,6 @@ button {
   text-decoration: none;
 }
 
-/* Button hover effects */
 button:hover {
   background-color: #1a3a6b;
   transform: translateY(-1px);
@@ -76,14 +68,12 @@ button:active {
   box-shadow: 0 2px 4px rgba(15, 43, 89, 0.15);
 }
 
-/* Link styles to remove default styling */
 a {
   text-decoration: none;
   width: 100%;
   max-width: 280px;
 }
 
-/* Responsive design */
 @media (min-width: 576px) {
   .button-container {
     flex-direction: row;
@@ -100,13 +90,11 @@ a {
   }
 }
 
-/* Focus styles for accessibility */
 button:focus {
   outline: 2px solid #399be2;
   outline-offset: 2px;
 }
 
-/* Secondary button variant (if needed later) */
 .btn-secondary {
   background-color: #f69240;
   color: #ffffff;

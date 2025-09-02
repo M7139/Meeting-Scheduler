@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { GetTeachers } from '../services/teacher'
+import { BASE_URL } from '../services/api'
 import '../styles/TeachersListPage.css'
 
 const TeachersListPage = () => {
@@ -26,20 +27,21 @@ const TeachersListPage = () => {
       ) : (
         <>
           <div className="teachers-count">
-            {teachers.length} teacher{teachers.length !== 1 ? 's' : ''}{' '}
-            available
+            {teachers.length} teacher{teachers.length !== 1 ? 's' : ''} available
           </div>
           <ul className="teachers-list">
             {teachers.map((teacher) => (
               <li key={teacher._id} className="teacher-card">
                 <div className="teacher-info">
-                  {teacher.profileImage && (
-                    <img
-                      src={`http://localhost:3000/uploads/${teacher.profileImage}`}
-                      alt={teacher.name}
-                      className="teacher-image"
-                    />
-                  )}
+                  <img
+                    src={
+                      teacher.profileImage
+                        ? `${BASE_URL}/uploads/${teacher.profileImage}`
+                        : `${BASE_URL}/uploads/default-avatar.png`
+                    }
+                    alt={teacher.name}
+                    className="teacher-image"
+                  />
                   <div>
                     <h3 className="teacher-name">{teacher.name}</h3>
                     {teacher.department && (

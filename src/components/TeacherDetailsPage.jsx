@@ -12,7 +12,6 @@ const TeacherDetailsPage = () => {
   useEffect(() => {
     const getTeacherDetails = async () => {
       try {
-        // Get basic teacher info
         const data = await GetTeacherById(id)
         setTeacher({
           _id: data._id,
@@ -20,7 +19,6 @@ const TeacherDetailsPage = () => {
           department: data.department
         })
 
-        // Get only free slots
         const freeSlots = await GetTeacherAvailability(id)
         setAvailability(freeSlots)
       } catch (err) {
@@ -38,8 +36,6 @@ const TeacherDetailsPage = () => {
         startTime: slot.startTime,
         endTime: slot.endTime
       })
-
-      // Remove booked slot from availability list
       setAvailability((prev) => prev.filter((s) => s !== slot))
     } catch (err) {
       console.error(err)
@@ -64,23 +60,19 @@ const TeacherDetailsPage = () => {
         <h3>Available Slots</h3>
         {availability.length === 0 ? (
           <div className="empty-slots">
-            No available time slots at the moment. Please check back later or
-            contact the teacher directly.
+            No available time slots at the moment. Please check back later or contact the teacher directly.
           </div>
         ) : (
           <>
             <div className="slots-count">
-              {availability.length} slot{availability.length !== 1 ? 's' : ''}{' '}
-              available
+              {availability.length} slot{availability.length !== 1 ? 's' : ''} available
             </div>
             <ul className="slots-list">
               {availability.map((slot, index) => (
                 <li key={index} className="slot-item">
                   <div className="slot-info">
                     <span className="slot-day">{slot.day}</span>
-                    <span className="slot-time">
-                      {slot.startTime} - {slot.endTime}
-                    </span>
+                    <span className="slot-time">{slot.startTime} - {slot.endTime}</span>
                   </div>
                   <button className="book-btn" onClick={() => handleBook(slot)}>
                     Book Slot

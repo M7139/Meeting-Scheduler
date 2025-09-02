@@ -44,15 +44,11 @@ const StudentBooking = () => {
               <div className="booking-info">
                 <div className="booking-detail">
                   <span className="booking-label">Teacher</span>
-                  <span className="booking-value teacher-name">
-                    {booking.teacher.name}
-                  </span>
+                  <span className="booking-value teacher-name">{booking.teacher.name}</span>
                 </div>
                 <div className="booking-detail">
                   <span className="booking-label">Department</span>
-                  <span className="booking-value">
-                    {booking.teacher.department}
-                  </span>
+                  <span className="booking-value">{booking.teacher.department}</span>
                 </div>
                 <div className="booking-detail">
                   <span className="booking-label">Day</span>
@@ -60,15 +56,10 @@ const StudentBooking = () => {
                 </div>
                 <div className="booking-detail">
                   <span className="booking-label">Time</span>
-                  <span className="booking-value">
-                    {booking.startTime} - {booking.endTime}
-                  </span>
+                  <span className="booking-value">{booking.startTime} - {booking.endTime}</span>
                 </div>
               </div>
-              <button
-                className="cancel-btn"
-                onClick={() => handleCancel(booking._id)}
-              >
+              <button className="cancel-btn" onClick={() => handleCancel(booking._id)}>
                 Cancel Booking
               </button>
             </li>

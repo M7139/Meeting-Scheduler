@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Client from '../services/api'
+import Client, { BASE_URL } from '../services/api'
 import '../styles/Profile.css'
 
 const Profile = ({ user }) => {
@@ -25,14 +25,15 @@ const Profile = ({ user }) => {
     setErrorMsg('')
 
     try {
-      const endpoint = user.userType === 'student' 
-        ? '/students/profile/me' 
-        : '/teachers/profile/me'
+      const endpoint =
+        user.userType === 'student'
+          ? '/students/profile/me'
+          : '/teachers/profile/me'
 
       const formData = new FormData()
       formData.append('name', form.name)
       formData.append('email', form.email)
-      
+
       if (user.userType === 'teacher') {
         formData.append('office', form.office || '')
         formData.append('department', form.department || '')
@@ -51,55 +52,75 @@ const Profile = ({ user }) => {
   return (
     <div className="profile-container">
       <h2>My Profile</h2>
-      
+
       {!editing ? (
         <div>
           <div className="profile-info">
             {form.profileImage && (
+              <div className="profile-pic-container">
+                <img
+                  src={`${BASE_URL}/uploads/${form.profileImage}`}
+                  alt="Profile"
+                  className="profile-pic"
+                />
+              </div>
+            )}
+            <p>
+              <strong>Name:</strong> <span>{form.name}</span>
+            </p>
+            <p>
+              <strong>Email:</strong> <span>{form.email}</span>
+            </p>
+            <p>
+              <strong>Role:</strong> <span>{user.userType}</span>
+            </p>
+
+            {user.userType === 'teacher' && (
+              <>
+                <p>
+                  <strong>Office:</strong>{' '}
+                  <span>{form.office || 'Not specified'}</span>
+                </p>
+                <p>
+                  <strong>Department:</strong>{' '}
+                  <span>{form.department || 'Not specified'}</span>
+                </p>
+              </>
+            )}
+          </div>
+          <div className="edit-btn-container">
+            <button className="edit-btn" onClick={() => setEditing(true)}>
+              Edit Profile
+            </button>
+          </div>
+        </div>
+      ) : (
+        <form className="profile-form" onSubmit={handleSubmit}>
+          <div className="profile-pic-container">
+            {form.profileImage && !profileImage && (
               <img
-                src={`http://localhost:3000/uploads/${form.profileImage}`}
+                src={`${BASE_URL}/uploads/${form.profileImage}`}
                 alt="Profile"
                 className="profile-pic"
               />
             )}
-            <p><strong>Name:</strong> {form.name}</p>
-            <p><strong>Email:</strong> {form.email}</p>
-            <p><strong>Role:</strong> {user.userType}</p>
-            
-            {/* Always show department and office for teachers */}
-            {user.userType === 'teacher' && (
-              <>
-                <p><strong>Office:</strong> {form.office || 'Not specified'}</p>
-                <p><strong>Department:</strong> {form.department || 'Not specified'}</p>
-              </>
+            {profileImage && (
+              <img
+                src={URL.createObjectURL(profileImage)}
+                alt="New Profile"
+                className="profile-pic"
+              />
             )}
           </div>
-          <button className="edit-btn" onClick={() => setEditing(true)}>
-            Edit Profile
-          </button>
-        </div>
-      ) : (
-        <form className="profile-form" onSubmit={handleSubmit}>
-          {form.profileImage && !profileImage && (
-            <img
-              src={`http://localhost:3000/uploads/${form.profileImage}`}
-              alt="Profile"
-              className="profile-pic"
-            />
-          )}
-          {profileImage && (
-            <img
-              src={URL.createObjectURL(profileImage)}
-              alt="New Profile"
-              className="profile-pic"
-            />
-          )}
-          
-          <input type="file" accept="image/*" onChange={handleFileChange} />
+
+          <div className="file-input-container">
+            <input type="file" accept="image/*" onChange={handleFileChange} />
+          </div>
+
           <input
             type="text"
             name="name"
-            value={form.name}
+            value={form.name || ''}
             onChange={handleChange}
             placeholder="Name"
             required
@@ -107,12 +128,12 @@ const Profile = ({ user }) => {
           <input
             type="email"
             name="email"
-            value={form.email}
+            value={form.email || ''}
             onChange={handleChange}
             placeholder="Email"
             required
           />
-          
+
           {user.userType === 'teacher' && (
             <>
               <input
@@ -131,12 +152,18 @@ const Profile = ({ user }) => {
               />
             </>
           )}
-          
+
           {errorMsg && <p className="error">{errorMsg}</p>}
-          
+
           <div className="button-group">
-            <button type="submit">Save</button>
-            <button type="button" onClick={() => setEditing(false)}>
+            <button type="submit" className="btn-primary">
+              Save
+            </button>
+            <button
+              type="button"
+              className="btn-secondary"
+              onClick={() => setEditing(false)}
+            >
               Cancel
             </button>
           </div>
