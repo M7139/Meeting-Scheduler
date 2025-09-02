@@ -33,7 +33,7 @@ export const GetTeacherAvailability = async (id) => {
 // Get the logged-in teacher's own profile
 export const GetTeacherProfile = async () => {
   try {
-    const res = await Client.get('/teachers/me')
+    const res = await Client.get('/teachers/profile/me')
     return res.data
   } catch (error) {
     throw error
@@ -43,7 +43,7 @@ export const GetTeacherProfile = async () => {
 // Update the logged-in teacher's profile
 export const UpdateTeacherProfile = async (data) => {
   try {
-    const res = await Client.put('/teachers/me', data)
+    const res = await Client.put('/teachers/profile/me', data)
     return res.data
   } catch (error) {
     throw error
@@ -53,7 +53,7 @@ export const UpdateTeacherProfile = async (data) => {
 // Delete the logged-in teacher's account
 export const DeleteTeacher = async () => {
   try {
-    const res = await Client.delete('/teachers/me')
+    const res = await Client.delete('/teachers/profile/me')
     return res.data
   } catch (error) {
     throw error
@@ -63,29 +63,27 @@ export const DeleteTeacher = async () => {
 // Add availability slots
 export const AddAvailability = async (availability) => {
   try {
-    const res = await Client.post('/teachers/me/availability', { availability })
+    const res = await Client.post('/teachers/availability', { availability })
     return res.data
   } catch (error) {
     throw error
   }
 }
 
-// Update an availability slot by index
+// Update an availability slot by slotId
 export const UpdateAvailability = async (data) => {
   try {
-    const res = await Client.put('/teachers/me/availability', data)
+    const res = await Client.put('/teachers/availability', data)
     return res.data
   } catch (error) {
     throw error
   }
 }
 
-// Delete an availability slot by index
-export const DeleteAvailability = async (index) => {
+// Delete an availability slot by slotId
+export const DeleteAvailability = async (slotId) => {
   try {
-    const res = await Client.delete('/teachers/me/availability', {
-      data: { index }
-    })
+    const res = await Client.delete(`/teachers/availability/${slotId}`)
     return res.data
   } catch (error) {
     throw error

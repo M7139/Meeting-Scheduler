@@ -1,0 +1,133 @@
+.availability-container {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(15, 43, 89, 0.1);
+  border: 1px solid #e6ecf5;
+}
+
+.availability-container h2 {
+  color: #0f2b59;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: -0.025em;
+}
+
+.availability-slot {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr 80px 80px;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e6ecf5;
+}
+
+.availability-slot input {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: #4c5a73;
+  background-color: #ffffff;
+  border: 2px solid #d5ddea;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.availability-slot input:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.1);
+}
+
+.availability-slot input::placeholder {
+  color: #8b95a8;
+}
+
+.save-btn {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: #ffffff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.save-btn:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.15);
+}
+
+.delete-btn {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: #ffffff;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.15);
+}
+
+.add-btn {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  font-size: 0.925rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: #ffffff;
+  background-color: #0f2b59;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #1a3a6b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 43, 89, 0.2);
+}
+
+.save-btn:active,
+.delete-btn:active,
+.add-btn:active {
+  transform: translateY(0);
+}
+
+.save-btn:focus,
+.delete-btn:focus,
+.add-btn:focus {
+  outline: 2px solid #399be2;
+  outline-offset: 2px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #8b95a8;
+  font-style: italic;
+}

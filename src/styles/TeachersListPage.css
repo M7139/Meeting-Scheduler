@@ -1,0 +1,120 @@
+.teachers-container {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(15, 43, 89, 0.1);
+  border: 1px solid #e6ecf5;
+}
+
+.teachers-container h2 {
+  color: #0f2b59;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: -0.025em;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #8b95a8;
+  font-size: 1rem;
+}
+
+.teachers-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.teacher-card {
+  background-color: #f8f9fa;
+  border: 1px solid #e6ecf5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.teacher-card:hover {
+  border-color: #17a2b8;
+  box-shadow: 0 4px 12px rgba(23, 162, 184, 0.1);
+  transform: translateY(-2px);
+}
+
+.teacher-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.teacher-name {
+  color: #0f2b59;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.teacher-department {
+  color: #4c5a73;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.teacher-office {
+  color: #8b95a8;
+  font-size: 0.8rem;
+  margin: 0;
+  margin-top: 0.25rem;
+}
+
+.view-link {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #17a2b8;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.view-link:hover {
+  background-color: #138496;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(23, 162, 184, 0.2);
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.view-link:focus {
+  outline: 2px solid #17a2b8;
+  outline-offset: 2px;
+}
+
+.teachers-count {
+  text-align: center;
+  color: #8b95a8;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.teacher-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}

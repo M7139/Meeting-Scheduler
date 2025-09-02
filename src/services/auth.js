@@ -1,9 +1,9 @@
 import Client from './api'
 
 // Register student
-export const RegisterStudent = async (data) => {
+export const RegisterStudent = async (formData) => {
   try {
-    const res = await Client.post('/auth/register/student', data) 
+    const res = await Client.post('/auth/register/student', formData) 
     return res.data
   } catch (error) {
     throw error
@@ -11,9 +11,9 @@ export const RegisterStudent = async (data) => {
 }
 
 // Register teacher
-export const RegisterTeacher = async (data) => {
+export const RegisterTeacher = async (formData) => {
   try {
-    const res = await Client.post('/auth/register/teacher', data) 
+    const res = await Client.post('/auth/register/teacher', formData) 
     return res.data
   } catch (error) {
     throw error

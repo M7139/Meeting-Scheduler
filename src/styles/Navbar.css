@@ -1,0 +1,100 @@
+nav {
+  background-color: #0f2b59;
+  border-bottom: 1px solid #1a3a6b;
+  padding: 0 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  min-height: 60px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+nav a[href="/"] {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  margin-right: 2rem;
+}
+
+nav a:hover {
+  color: #f69240;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav a.active {
+  color: #f69240;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+nav button {
+  background-color: #dc3545;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+nav button:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.15);
+}
+
+nav button:active {
+  transform: translateY(0);
+}
+
+nav button:focus {
+  outline: 2px solid #dc3545;
+  outline-offset: 2px;
+}
+
+nav a[href*="teacher"] {
+  color: #ffffff;
+}
+
+nav a[href*="student"] {
+  color: #ffffff;
+}
+
+nav a[href*="teacher"]:hover,
+nav a[href*="student"]:hover {
+  color: #f69240;
+}

@@ -23,7 +23,7 @@ export const GetBookingById = async (id) => {
 // Get bookings for logged-in student
 export const GetStudentBookings = async () => {
   try {
-    const res = await Client.get("/bookings/student")
+    const res = await Client.get("/bookings/student/me")
     return res.data
   } catch (error) {
     throw error
@@ -33,7 +33,7 @@ export const GetStudentBookings = async () => {
 // Get bookings for logged-in teacher
 export const GetTeacherBookings = async () => {
   try {
-    const res = await Client.get("/bookings/teacher")
+    const res = await Client.get("/bookings/teacher/me")
     return res.data
   } catch (error) {
     throw error

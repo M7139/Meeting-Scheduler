@@ -1,0 +1,155 @@
+.profile-container {
+  max-width: 500px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(15, 43, 89, 0.1);
+  border: 1px solid #e6ecf5;
+}
+
+.profile-container h2 {
+  color: #0f2b59;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: -0.025em;
+}
+
+.profile-info {
+  margin-bottom: 2rem;
+}
+
+.profile-info p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f4f8;
+  margin: 0;
+  font-size: 0.875rem;
+  color: #4c5a73;
+}
+
+.profile-info p:last-child {
+  border-bottom: none;
+}
+
+.profile-info strong {
+  color: #0f2b59;
+  font-weight: 500;
+  min-width: 80px;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profile-form input {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: #4c5a73;
+  background-color: #ffffff;
+  border: 2px solid #d5ddea;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.profile-form input:focus {
+  outline: none;
+  border-color: #0f2b59;
+  box-shadow: 0 0 0 3px rgba(15, 43, 89, 0.1);
+}
+
+.profile-form input::placeholder {
+  color: #8b95a8;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  font-size: 0.925rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: #ffffff;
+  background-color: #0f2b59;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1a3a6b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 43, 89, 0.2);
+}
+
+.btn-secondary {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  font-size: 0.925rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: #4c5a73;
+  background-color: #f8f9fa;
+  border: 2px solid #d5ddea;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.btn-primary:active,
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:focus,
+.btn-secondary:focus {
+  outline: 2px solid #399be2;
+  outline-offset: 2px;
+}
+
+.edit-btn {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  font-size: 0.925rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: #ffffff;
+  background-color: #f69240;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-btn:hover {
+  background-color: #e8823a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(246, 146, 64, 0.2);
+}
+
+.edit-btn:active {
+  transform: translateY(0);
+}
+
+.edit-btn:focus {
+  outline: 2px solid #f69240;
+  outline-offset: 2px;
+}

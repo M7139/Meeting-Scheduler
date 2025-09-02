@@ -11,9 +11,9 @@ export const GetStudentProfile = async () => {
 }
 
 // Update logged-in student profile
-export const UpdateStudentProfile = async (data) => {
+export const UpdateStudentProfile = async (formData) => {
   try {
-    const res = await Client.put("/students/me", data)
+    const res = await Client.put("/students/me", formData)
     return res.data
   } catch (error) {
     throw error

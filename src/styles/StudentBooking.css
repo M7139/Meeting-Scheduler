@@ -1,0 +1,115 @@
+.booking-container {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(15, 43, 89, 0.1);
+  border: 1px solid #e6ecf5;
+}
+
+.booking-container h2 {
+  color: #0f2b59;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: -0.025em;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #f5c6cb;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #8b95a8;
+  font-size: 1rem;
+}
+
+.booking-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.booking-item {
+  background-color: #f8f9fa;
+  border: 1px solid #e6ecf5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+
+.booking-item:hover {
+  border-color: #17a2b8;
+  box-shadow: 0 2px 8px rgba(23, 162, 184, 0.1);
+}
+
+.booking-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.booking-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.booking-label {
+  font-weight: 500;
+  color: #0f2b59;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.booking-value {
+  color: #4c5a73;
+  font-size: 0.925rem;
+}
+
+.teacher-name {
+  font-weight: 600;
+  color: #0f2b59;
+}
+
+.cancel-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: #ffffff;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.cancel-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2);
+}
+
+.cancel-btn:active {
+  transform: translateY(0);
+}
+
+.cancel-btn:focus {
+  outline: 2px solid #dc3545;
+  outline-offset: 2px;
+}
