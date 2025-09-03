@@ -5,9 +5,12 @@ const Navbar = ({ user, handleLogout }) => {
   return (
     <nav>
       <div className="nav-container">
-        <Link to="/" className="nav-brand">
-          Home
-        </Link>
+        {!user && (
+          <Link to="/" className="nav-brand">
+            Home
+          </Link>
+        )}
+        
 
         {user ? (
           <div className="user-nav">

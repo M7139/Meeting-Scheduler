@@ -20,8 +20,10 @@ const LoginPage = ({ setUser }) => {
     try {
       const user = await Login(form)
       setUser(user) 
-      
-      navigate("/") 
+      user.userType === 'student'
+          ? navigate("/student-bookings")
+          : navigate("/teacher-bookings")
+       
     } catch (err) {
       console.error(err)
       
